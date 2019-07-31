@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.PasswordField?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121"
+      fx:controller="client.Controller">
+    <stylesheets><URL value="@/css/Style.css"/></stylesheets>
+
+    <HBox fx:id="upperPanel">
+        <TextField HBox.hgrow="ALWAYS" promptText="Логин" fx:id="loginField"/>
+        <PasswordField  promptText="Пароль" fx:id="passwordField" onAction="#tryToAuth"/>
+        <Button text="Aвторизоваться" onAction="#tryToAuth"/>
+    </HBox>
+
+    <HBox fx:id="regPanel">
+        <TextField HBox.hgrow="ALWAYS" promptText="Логин" fx:id="regLoginField"/>
+        <TextField HBox.hgrow="ALWAYS" promptText="Никнейм" fx:id="regNickField"/>
+        <PasswordField  promptText="Пароль" fx:id="regPasswordField" onAction="#tryToReg"/>
+        <Button text="Регистрация" onAction="#tryToReg"/>
+    </HBox>
+
+    <HBox fx:id="sysMsg" HBox.hgrow="ALWAYS" visible="false" managed="false">
+        <padding><Insets top="5" bottom="5" left="5" right="5"/></padding>
+        <Label fx:id="sysTxt" />
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <ScrollPane fx:id="scrollPane" VBox.vgrow="ALWAYS" fitToWidth="true">
+                <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+                <VBox fx:id="msgList" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="5"/>
+            </ScrollPane>
+            <HBox fx:id="bottomPanel" managed="false" visible="false">
+                <TextField fx:id="textField" onAction="#sendMsg" promptText="Введите текст" HBox.hgrow="ALWAYS" />
+                <Button fx:id="btn1" onAction="#sendMsg" text="Send" />
+            </HBox>
+        </VBox>
+        <ListView fx:id="clientList" managed="false" onMouseClicked="#selectClient" visible="false"
+                  prefWidth="100" HBox.hgrow="NEVER"/>
+    </HBox>
+
+</VBox>

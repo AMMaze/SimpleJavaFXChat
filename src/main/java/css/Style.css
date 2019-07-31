@@ -1,0 +1,37 @@
+#btn1:hover {
+    -fx-background-color: rgb(2,0,36),
+        linear-gradient(rgb(2,0,36), rgba(2,0,36,1) 0%, rgba(39,38,50,1) 50%, rgba(58,58,58,1) 100%, rgba(154,238,255,1) 100%);;
+}
+
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-background-radius: 0;
+    -fx-background-color: #1d1d1d;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: #d8d8d8;
+}
+
+#textfont {
+    -fx-font-family: "Quicksand";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: #282a38;
+}
+
+.text-field{
+    -fx-padding: 1,1,1,1;
+    -fx-border-color: grey;
+    -fx-border-width: 2;
+    -fx-border-radius: 1;
+    -fx-border: gone;
+    -fx-background-color: transparent;
+    -fx-text-fill: grey;
+    -fx-min-height: 26;
+}
